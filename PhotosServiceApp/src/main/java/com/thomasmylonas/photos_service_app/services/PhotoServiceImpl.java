@@ -20,8 +20,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PhotoServiceImpl implements PhotoService {
 
-    @Value(value = "${jsonplaceholder.url}")
-    private String jsonplaceholderUrl;
+    @Value(value = "${json_placeholder.url}")
+    private String jsonPlaceholderUrl;
 
     private final PhotoRepository photoRepository;
     private final PhotoMapper photoMapper;
@@ -32,7 +32,7 @@ public class PhotoServiceImpl implements PhotoService {
     public List<PhotoResponseDto> fetchPhotosByRestTemplate() {
 
         ResponseEntity<List<Photo>> photosWrapperResponseEntity = restTemplate.exchange(
-                jsonplaceholderUrl + "/photos",
+                jsonPlaceholderUrl + "/photos",
                 HttpMethod.GET, null, new ParameterizedTypeReference<>() {
                 });
 

@@ -9,8 +9,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class ClientsConfig {
 
-    @Value(value = "${jsonplaceholder.url}")
-    private String jsonplaceholderUrl;
+    @Value(value = "${json_placeholder.url}")
+    private String jsonPlaceholderUrl;
 
     @Bean(value = "restTemplate")
     public RestTemplate restTemplate() {
@@ -19,6 +19,6 @@ public class ClientsConfig {
 
     @Bean(value = "webClient")
     public WebClient webClient() {
-        return WebClient.create(jsonplaceholderUrl);
+        return WebClient.create(jsonPlaceholderUrl);
     }
 }
