@@ -19,7 +19,7 @@
     </properties>
 
     <modules>
-        <module>TodoServiceApp</module>
+        <module>PhotosServiceApp</module>
         <module>TodoDashboardServiceApp</module>
     </modules>
 
