@@ -4,12 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.thomasmylonas</groupId>
-        <artifactId>spring_boot_projects</artifactId>
+        <artifactId>todo_management_app</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath> <!-- Lookup parent 2 levels up -->
+        <relativePath>pom.xml</relativePath>
     </parent>
     <artifactId>todo_web_app</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>TodoWebApp</name>
     <description>TodoWebApp</description>
