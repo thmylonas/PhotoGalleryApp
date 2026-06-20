@@ -1,0 +1,39 @@
+About Webflux DataBufferLimitException
+------------------------------------------
+
+Links:
+- https://www.baeldung.com/spring-webflux-databufferlimitexception
+- https://stackoverflow.com/questions/59735951/databufferlimitexception-exceeded-limit-on-max-bytes-to-buffer-webflux-error
+- https://stackoverflow.com/questions/68024868/getting-org-springframework-core-io-buffer-databufferlimitexception-exceeded-l
+- https://stackoverflow.com/questions/77890687/webtestclient-giving-the-error-org-springframework-core-io-buffer-databufferlim
+- https://indianakv.medium.com/solution-for-web-cleint-databufferlimit-exception-256-kb-391d8605b965
+- https://technoname.com/index.php/2024/02/03/databufferlimitexception-exceeded-limit-on-max-bytes-solved
+- https://www.geeksforgeeks.org/advance-java/resolve-spring-webflux-databufferlimitexception
+
+The Webflux/WebClient throws the next exception:
+    "org.springframework.web.reactive.function.client.WebClientResponseException:
+    200 OK from GET https://jsonplaceholder.typicode.com/photos, but response failed with cause:
+    org.springframework.core.io.buffer.DataBufferLimitException: Exceeded limit on max bytes to buffer : 262144"
+
+[Not_Working] Solution
+--------------------------
+Add 1 of the next properties in "application.properties":
+- spring.codec.max-in-memory-size=500MB (Deprecated)
+- spring.http.codecs.max-in-memory-size=500MB
+
+[Working] Solution
+----------------------
+Add in the @Configuration class the next bean:
+
+    @Bean(value = "webClient")
+    public WebClient webClient() {
+        return WebClient
+                .builder()
+                .codecs(codecs -> codecs
+                        .defaultCodecs()
+                        .maxInMemorySize(500 * 1024 * 1024)
+                )
+                .build();
+    }
+
+========================================================================================================================

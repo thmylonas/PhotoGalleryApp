@@ -50,7 +50,7 @@ public class PhotoServiceImpl implements PhotoService {
 
         List<Photo> photos = webClient
                 .get()
-                .uri("/photos")
+                .uri(jsonPlaceholderUrl + "/photos")
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<List<Photo>>() {
                 })
