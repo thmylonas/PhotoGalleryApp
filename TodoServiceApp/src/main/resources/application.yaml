@@ -1,14 +1,6 @@
 server:
   port: 8080
 
-#Datasource - Oracle Database
-#spring:
-#  datasource:
-#    url: jdbc:oracle:thin:@localhost:1521:oracledb
-#    username: mydb
-#    password: aaaa
-#    driver-class-name: oracle.jdbc.OracleDriver
-
 #Datasource - H2-Database: Basic properties
 spring:
   datasource:

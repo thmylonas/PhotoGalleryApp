@@ -8,10 +8,10 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>pom.xml</relativePath>
     </parent>
-    <artifactId>todo_web_app</artifactId>
+    <artifactId>todo_service_app</artifactId>
     <packaging>jar</packaging>
-    <name>TodoWebApp</name>
-    <description>TodoWebApp</description>
+    <name>TodoServiceApp</name>
+    <description>TodoServiceApp</description>
 
     <dependencies>
         <dependency>

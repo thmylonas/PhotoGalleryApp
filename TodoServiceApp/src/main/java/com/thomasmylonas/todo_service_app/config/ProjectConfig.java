@@ -1,4 +1,4 @@
-package com.thomasmylonas.todo_web_app.config;
+package com.thomasmylonas.todo_service_app.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

@@ -1,7 +1,7 @@
-package com.thomasmylonas.todo_web_app;
+package com.thomasmylonas.todo_service_app;
 
-import com.thomasmylonas.todo_web_app.entities.Todo;
-import com.thomasmylonas.todo_web_app.services.TodoService;
+import com.thomasmylonas.todo_service_app.entities.Todo;
+import com.thomasmylonas.todo_service_app.services.TodoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,12 +14,12 @@ import java.util.List;
 @SpringBootApplication
 @RequiredArgsConstructor
 @PropertySource(value = "classpath:properties/properties.properties")
-public class TodoWebAppApplication {
+public class TodoServiceAppApplication {
 
     private final TodoService todoService;
 
     public static void main(String[] args) {
-        SpringApplication.run(TodoWebAppApplication.class, args);
+        SpringApplication.run(TodoServiceAppApplication.class, args);
     }
 
     @Bean

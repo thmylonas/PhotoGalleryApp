@@ -1,7 +1,7 @@
-package com.thomasmylonas.todo_web_app.services;
+package com.thomasmylonas.todo_service_app.services;
 
-import com.thomasmylonas.todo_web_app.entities.Todo;
-import com.thomasmylonas.todo_web_app.repositories.TodoRepository;
+import com.thomasmylonas.todo_service_app.entities.Todo;
+import com.thomasmylonas.todo_service_app.repositories.TodoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;

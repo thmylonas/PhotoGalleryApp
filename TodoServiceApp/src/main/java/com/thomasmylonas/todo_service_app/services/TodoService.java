@@ -1,6 +1,6 @@
-package com.thomasmylonas.todo_web_app.services;
+package com.thomasmylonas.todo_service_app.services;
 
-import com.thomasmylonas.todo_web_app.entities.Todo;
+import com.thomasmylonas.todo_service_app.entities.Todo;
 
 import java.util.List;
 
