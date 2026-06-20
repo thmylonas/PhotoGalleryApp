@@ -20,7 +20,7 @@
 
     <modules>
         <module>PhotosServiceApp</module>
-        <module>TodoDashboardServiceApp</module>
+        <module>GalleryServiceApp</module>
     </modules>
 
     <dependencies>

@@ -1,12 +1,12 @@
-package com.thomasmylonas.TodoDashboardServiceApp;
+package com.thomasmylonas.gallery_service_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TodoDashboardServiceAppApplication {
+public class GalleryServiceAppApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TodoDashboardServiceAppApplication.class, args);
+        SpringApplication.run(GalleryServiceAppApplication.class, args);
     }
 }

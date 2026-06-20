@@ -8,10 +8,10 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>pom.xml</relativePath>
     </parent>
-    <artifactId>todo_dashboard_service_app</artifactId>
+    <artifactId>gallery_service_app</artifactId>
     <packaging>jar</packaging>
-    <name>TodoDashboardServiceApp</name>
-    <description>TodoDashboardServiceApp</description>
+    <name>GalleryServiceApp</name>
+    <description>GalleryServiceApp</description>
 
     <dependencies>
         <dependency>

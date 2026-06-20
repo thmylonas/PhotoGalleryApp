@@ -1,10 +1,10 @@
-package com.thomasmylonas.TodoDashboardServiceApp;
+package com.thomasmylonas.gallery_service_app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TodoDashboardServiceAppApplicationTests {
+class GalleryServiceAppApplicationTests {
 
     @Test
     void contextLoads() {
