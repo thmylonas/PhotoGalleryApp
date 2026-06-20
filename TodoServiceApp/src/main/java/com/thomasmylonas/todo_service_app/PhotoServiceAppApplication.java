@@ -1,7 +1,7 @@
 package com.thomasmylonas.todo_service_app;
 
-import com.thomasmylonas.todo_service_app.entities.Todo;
-import com.thomasmylonas.todo_service_app.services.TodoService;
+import com.thomasmylonas.todo_service_app.dtos.todo_dtos.PhotoResponseDto;
+import com.thomasmylonas.todo_service_app.services.PhotoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,20 +14,20 @@ import java.util.List;
 @SpringBootApplication
 @RequiredArgsConstructor
 @PropertySource(value = "classpath:properties/properties.properties")
-public class TodoServiceAppApplication {
+public class PhotoServiceAppApplication {
 
-    private final TodoService todoService;
+    private final PhotoService photoService;
 
     public static void main(String[] args) {
-        SpringApplication.run(TodoServiceAppApplication.class, args);
+        SpringApplication.run(PhotoServiceAppApplication.class, args);
     }
 
     @Bean
     protected CommandLineRunner commandLineRunner() {
         return args -> {
-            //List<To-do> todos = todoService.fetchTodosByRestTemplate();
-            List<Todo> todos = todoService.fetchTodosByWebClient();
-            todos.forEach(System.out::println);
+            //List<PhotoResponseDto> photoResponseDtos = photoService.fetchPhotosByRestTemplate();
+            List<PhotoResponseDto> photoResponseDtos = photoService.fetchPhotosByWebClient();
+            photoResponseDtos.forEach(System.out::println);
         };
     }
 }

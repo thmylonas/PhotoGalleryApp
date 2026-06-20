@@ -1,0 +1,12 @@
+package com.thomasmylonas.todo_service_app.services;
+
+import com.thomasmylonas.todo_service_app.dtos.todo_dtos.PhotoResponseDto;
+
+import java.util.List;
+
+public interface PhotoService {
+
+    List<PhotoResponseDto> fetchPhotosByRestTemplate();
+
+    List<PhotoResponseDto> fetchPhotosByWebClient();
+}
