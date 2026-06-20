@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: todo_dashboard_service_app
+    name: gallery_service_app
 
   #Datasource - H2-Database: Basic properties
   datasource:
@@ -11,12 +11,6 @@ spring:
     username: sa
     password:
     driver-class-name: org.h2.Driver
-
-  #Datasource - H2-Database: schema/data locations
-  #  sql:
-  #    init:
-  #      schema-locations: classpath:sql_queries/schema.sql
-  #      data-locations: classpath:sql_queries/data.sql
 
   #Datasource - H2-Database: Other properties
   h2:

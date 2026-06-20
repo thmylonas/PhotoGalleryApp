@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: todo_service_app
+    name: photos_service_app
 
   #Datasource - H2-Database: Basic properties
   datasource:

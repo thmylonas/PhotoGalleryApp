@@ -13,16 +13,16 @@ Links:
 
 Exceptions thrown:
 org.springframework.orm.ObjectOptimisticLockingFailureException:
-Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [To-do#1]
+Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [Photo#1]
 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:329) ~[spring-orm-6.2.7.jar:6.2.7]
 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:256) ~[spring-orm-6.2.7.jar:6.2.7]
 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:244) ~[spring-orm-6.2.7.jar:6.2.7]
 Caused by: org.hibernate.StaleObjectStateException:
-Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [To-do#1]
+Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [Photo#1]
 	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:426) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
 
 Explanation/Solution:
-The Todos have already an ID. If we try to generate IDs, the previous Exception is thrown.
-The "To-do" entity need no "@GeneratedValue"
+The Photos have already an ID. If we try to generate IDs, the previous Exception is thrown.
+The "Photo" entity need no "@GeneratedValue"
 
 ========================================================================================================================

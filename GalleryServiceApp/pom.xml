@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.thomasmylonas</groupId>
-        <artifactId>todo_management_app</artifactId>
+        <artifactId>photo_gallery_app</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>pom.xml</relativePath>
     </parent>

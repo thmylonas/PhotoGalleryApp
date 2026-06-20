@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.thomasmylonas</groupId>
-    <artifactId>todo_management_app</artifactId>
+    <artifactId>photo_gallery_app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>TodoManagementApp</name>
-    <description>TodoManagementApp</description>
+    <name>PhotoGalleryApp</name>
+    <description>PhotoGalleryApp</description>
     <properties>
         <java.version>25</java.version>
     </properties>
