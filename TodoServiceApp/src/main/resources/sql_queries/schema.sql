@@ -1,0 +1,9 @@
+-- DROP TABLE IF EXISTS Todos;
+
+CREATE TABLE Todos
+(
+    Id        BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    User_Id   BIGINT NOT NULL,
+    Title     VARCHAR(255),
+    Completed BOOLEAN
+);

@@ -1,0 +1,53 @@
+server:
+  port: 8080
+
+#Datasource - Oracle Database
+#spring:
+#  datasource:
+#    url: jdbc:oracle:thin:@localhost:1521:oracledb
+#    username: mydb
+#    password: aaaa
+#    driver-class-name: oracle.jdbc.OracleDriver
+
+#Datasource - H2-Database: Basic properties
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  #Datasource - H2-Database: schema/data locations
+  #  sql:
+  #    init:
+  #      schema-locations: classpath:sql_queries/schema.sql
+  #      data-locations: classpath:sql_queries/data.sql
+
+  #Datasource - H2-Database: Other properties
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: false
+
+  #Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: update
+      #ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        show_sql: true
+        format_sql: false
+
+logging:
+  level:
+    org:
+      hibernate:
+        sql: debug
+
+#security.basic.enable=false
+#security.ignored=/**
