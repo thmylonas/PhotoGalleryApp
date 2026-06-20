@@ -1,4 +1,4 @@
-package com.thomasmylonas.todo_service_app.entities;
+package com.thomasmylonas.photos_service_app.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

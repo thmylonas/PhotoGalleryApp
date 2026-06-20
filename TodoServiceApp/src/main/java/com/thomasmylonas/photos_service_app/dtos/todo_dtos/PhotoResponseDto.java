@@ -1,4 +1,4 @@
-package com.thomasmylonas.todo_service_app.dtos.todo_dtos;
+package com.thomasmylonas.photos_service_app.dtos.todo_dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

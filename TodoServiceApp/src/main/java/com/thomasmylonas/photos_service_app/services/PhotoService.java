@@ -1,6 +1,6 @@
-package com.thomasmylonas.todo_service_app.services;
+package com.thomasmylonas.photos_service_app.services;
 
-import com.thomasmylonas.todo_service_app.dtos.todo_dtos.PhotoResponseDto;
+import com.thomasmylonas.photos_service_app.dtos.todo_dtos.PhotoResponseDto;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.thomasmylonas.todo_service_app.controllers;
+package com.thomasmylonas.photos_service_app.controllers;
 
-import com.thomasmylonas.todo_service_app.dtos.todo_dtos.PhotoResponseDto;
-import com.thomasmylonas.todo_service_app.services.PhotoService;
+import com.thomasmylonas.photos_service_app.dtos.todo_dtos.PhotoResponseDto;
+import com.thomasmylonas.photos_service_app.services.PhotoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

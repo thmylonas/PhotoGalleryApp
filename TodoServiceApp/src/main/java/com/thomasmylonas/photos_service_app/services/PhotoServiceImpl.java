@@ -1,10 +1,10 @@
-package com.thomasmylonas.todo_service_app.services;
+package com.thomasmylonas.photos_service_app.services;
 
-import com.thomasmylonas.todo_service_app.dtos.todo_dtos.PhotoResponseDto;
-import com.thomasmylonas.todo_service_app.entities.Photo;
-import com.thomasmylonas.todo_service_app.exceptions.RequestedResourceNotFoundException;
-import com.thomasmylonas.todo_service_app.repositories.PhotoRepository;
-import com.thomasmylonas.todo_service_app.services.mappers.PhotoMapper;
+import com.thomasmylonas.photos_service_app.dtos.todo_dtos.PhotoResponseDto;
+import com.thomasmylonas.photos_service_app.entities.Photo;
+import com.thomasmylonas.photos_service_app.exceptions.RequestedResourceNotFoundException;
+import com.thomasmylonas.photos_service_app.repositories.PhotoRepository;
+import com.thomasmylonas.photos_service_app.services.mappers.PhotoMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;

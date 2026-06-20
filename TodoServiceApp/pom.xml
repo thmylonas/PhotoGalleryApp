@@ -8,10 +8,10 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>pom.xml</relativePath>
     </parent>
-    <artifactId>todo_service_app</artifactId>
+    <artifactId>photos_service_app</artifactId>
     <packaging>jar</packaging>
-    <name>TodoServiceApp</name>
-    <description>TodoServiceApp</description>
+    <name>PhotosServiceApp</name>
+    <description>PhotosServiceApp</description>
 
     <dependencies>
         <dependency>

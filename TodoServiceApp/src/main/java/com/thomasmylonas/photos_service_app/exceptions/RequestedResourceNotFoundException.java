@@ -1,4 +1,4 @@
-package com.thomasmylonas.todo_service_app.exceptions;
+package com.thomasmylonas.photos_service_app.exceptions;
 
 public class RequestedResourceNotFoundException extends RuntimeException {
 

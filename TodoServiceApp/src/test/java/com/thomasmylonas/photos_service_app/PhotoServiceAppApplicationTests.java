@@ -1,4 +1,4 @@
-package com.thomasmylonas.todo_service_app;
+package com.thomasmylonas.photos_service_app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

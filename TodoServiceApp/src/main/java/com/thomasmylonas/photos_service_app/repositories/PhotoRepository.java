@@ -1,6 +1,6 @@
-package com.thomasmylonas.todo_service_app.repositories;
+package com.thomasmylonas.photos_service_app.repositories;
 
-import com.thomasmylonas.todo_service_app.entities.Photo;
+import com.thomasmylonas.photos_service_app.entities.Photo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PhotoRepository extends JpaRepository<Photo, Long> {
