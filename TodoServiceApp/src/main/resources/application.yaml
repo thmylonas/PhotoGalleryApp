@@ -1,8 +1,11 @@
 server:
   port: 8080
 
-#Datasource - H2-Database: Basic properties
 spring:
+  application:
+    name: todo_service_app
+
+  #Datasource - H2-Database: Basic properties
   datasource:
     url: jdbc:h2:mem:mydb
     username: sa
