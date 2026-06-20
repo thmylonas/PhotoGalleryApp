@@ -7,7 +7,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
-public class ProjectConfig {
+public class ClientsConfig {
 
     @Value(value = "${jsonplaceholder.url}")
     private String jsonplaceholderUrl;
