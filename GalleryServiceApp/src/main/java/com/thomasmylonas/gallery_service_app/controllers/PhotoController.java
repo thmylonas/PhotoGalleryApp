@@ -72,7 +72,7 @@ public class PhotoController {
 
         String photoUri = ServletUriComponentsBuilder
                 .fromCurrentRequest()
-                .path(photoResponseDto.id().toString())
+                .path("/" + photoResponseDto.id())
                 .buildAndExpand(photoResponseDto.id())
                 .toUriString();
         return responseBuilder.buildResponseSuccess(HttpStatus.CREATED, message, photoUri, Map.of("saved_photo_response", photoResponseDto));
