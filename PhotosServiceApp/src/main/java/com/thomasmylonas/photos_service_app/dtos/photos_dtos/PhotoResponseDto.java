@@ -5,19 +5,19 @@ import lombok.Builder;
 
 @Builder
 public record PhotoResponseDto(
-        @JsonProperty(value = "Id")
+        @JsonProperty(value = "id")
         Long id,
 
-        @JsonProperty(value = "Album_Id")
+        @JsonProperty(value = "album_id")
         Long albumId,
 
-        @JsonProperty(value = "Title")
+        @JsonProperty(value = "title")
         String title,
 
-        @JsonProperty(value = "Url")
+        @JsonProperty(value = "url")
         String url,
 
-        @JsonProperty(value = "Thumbnail_Url")
+        @JsonProperty(value = "thumbnail_url")
         String thumbnailUrl
 ) {
 }

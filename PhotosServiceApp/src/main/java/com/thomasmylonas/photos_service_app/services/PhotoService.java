@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PhotoService {
 
-    List<PhotoResponseDto> fetchPhotosByRestTemplate();
+    List<PhotoResponseDto> findAllPhotosByRestTemplate();
 
-    List<PhotoResponseDto> fetchPhotosByWebClient();
+    List<PhotoResponseDto> findAllPhotosByWebClient();
 }

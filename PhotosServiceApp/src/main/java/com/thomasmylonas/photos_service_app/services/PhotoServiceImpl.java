@@ -29,24 +29,23 @@ public class PhotoServiceImpl implements PhotoService {
     private final WebClient webClient;
 
     @Override
-    public List<PhotoResponseDto> fetchPhotosByRestTemplate() {
+    public List<PhotoResponseDto> findAllPhotosByRestTemplate() {
 
-        ResponseEntity<List<Photo>> photosWrapperResponseEntity = restTemplate.exchange(
+        ResponseEntity<List<Photo>> photosResponseEntity = restTemplate.exchange(
                 jsonPlaceholderUrl + "/photos",
                 HttpMethod.GET, null, new ParameterizedTypeReference<>() {
                 });
 
-        List<Photo> photos = photosWrapperResponseEntity.getBody();
+        List<Photo> photos = photosResponseEntity.getBody();
         if (photos == null) {
-            throw new RequestedResourceNotFoundException("The requested resource is not found");
+            throw new RequestedResourceNotFoundException("The requested photos are not found!");
         }
         photoRepository.saveAll(photos);
         return photos.stream().map(photoMapper::fromPhoto).toList();
     }
 
-
     @Override
-    public List<PhotoResponseDto> fetchPhotosByWebClient() {
+    public List<PhotoResponseDto> findAllPhotosByWebClient() {
 
         List<Photo> photos = webClient
                 .get()
@@ -57,7 +56,7 @@ public class PhotoServiceImpl implements PhotoService {
                 .block();
 
         if (photos == null) {
-            throw new RequestedResourceNotFoundException("The requested resource is not found");
+            throw new RequestedResourceNotFoundException("The requested photos are not found!");
         }
         photoRepository.saveAll(photos);
         return photos.stream().map(photoMapper::fromPhoto).toList();
