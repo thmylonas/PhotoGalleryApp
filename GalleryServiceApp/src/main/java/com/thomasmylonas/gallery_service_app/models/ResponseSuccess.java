@@ -1,0 +1,30 @@
+package com.thomasmylonas.gallery_service_app.models;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
+
+import java.time.LocalDateTime;
+import java.util.Map;
+
+@Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public record ResponseSuccess(
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
+        @JsonProperty(value = "timestamp")
+        LocalDateTime timestamp,
+
+        @JsonProperty(value = "status_code")
+        String statusCode,
+
+        @JsonProperty(value = "message")
+        String message,
+
+        @JsonProperty(value = "path")
+        String path, // "request URL"
+
+        @JsonProperty(value = "data")
+        Map<String, ?> data // The resource to be returned
+) {
+}
