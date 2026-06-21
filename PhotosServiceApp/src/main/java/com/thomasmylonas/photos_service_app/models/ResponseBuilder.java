@@ -1,55 +1,60 @@
 package com.thomasmylonas.photos_service_app.models;
 
 import com.thomasmylonas.photos_service_app.helpers.HelperClass;
-import io.micrometer.common.util.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.Map;
+import java.util.Objects;
 
 @Component
 public class ResponseBuilder {
 
-    @Value(value = "${stacktrace.display}")
-    private boolean stacktrace;
+    /**
+     * This default value only in DEV environment/profile. Set "false" in PROD environment/profile.
+     * The client to see the stacktrace, must add in the request URI the "?trace=true"
+     */
+    @Value(value = "${stacktrace.print:true}")
+    private boolean printStacktrace;
 
-    public ResponseEntity<ResponseSuccess> buildResponseSuccess(int statusCode, String message, Map<String, ?> data) {
-        return buildResponseSuccess(statusCode, message, ServletUriComponentsBuilder.fromCurrentRequest().build().toUriString(), data);
+    public ResponseEntity<ResponseSuccess> buildResponseSuccess(HttpStatus httpStatus, String message, Map<String, ?> data) {
+        return buildResponseSuccess(httpStatus, message, ServletUriComponentsBuilder.fromCurrentRequest().build().toUriString(), data);
     }
 
-    public ResponseEntity<ResponseSuccess> buildResponseSuccess(int statusCode, String message, String path, Map<String, ?> data) {
+    public ResponseEntity<ResponseSuccess> buildResponseSuccess(HttpStatus httpStatus, String message, String path, Map<String, ?> data) {
 
         ResponseSuccess responseSuccess = ResponseSuccess.builder()
                 .timestamp(LocalDateTime.now())
-                .statusCode(statusCode)
+                .statusCode(httpStatus.toString())
                 .message(message)
                 .path(path)
                 .data(data)
                 .build();
-        return ResponseEntity.status(statusCode).header(HttpHeaders.LOCATION, path).body(responseSuccess);
+        return ResponseEntity.status(httpStatus).header(HttpHeaders.LOCATION, path).body(responseSuccess);
     }
 
-    public ResponseEntity<ResponseError> buildResponseError(int statusCode, String message, String path, Exception e, WebRequest webRequest) {
+    public ResponseEntity<ResponseError> buildResponseError(Exception e, HttpStatus httpStatus, Map<String, ?> errorMessages, WebRequest webRequest) {
 
         ResponseError.ResponseErrorBuilder responseErrorBuilder = ResponseError.builder()
                 .timestamp(LocalDateTime.now())
-                .statusCode(statusCode)
-                .message(message)
-                .path(path);
-        if (displayStacktrace(webRequest)) {
-            responseErrorBuilder.stacktrace(HelperClass.stringifyStacktrace(e));
+                .statusCode(httpStatus.toString())
+                .errorMessages(errorMessages)
+                .path(ServletUriComponentsBuilder.fromCurrentRequest().build().toUriString());
+        if (printStacktrace && isTraceParameterEnabled(webRequest)) {
+            responseErrorBuilder.stacktrace(HelperClass.stacktrace(e));
         }
-        ResponseError responseError = responseErrorBuilder.build();
-        return ResponseEntity.status(statusCode).header(HttpHeaders.LOCATION, path).body(responseError);
+        return ResponseEntity.status(httpStatus).body(responseErrorBuilder.build());
     }
 
-    private boolean displayStacktrace(WebRequest webRequest) {
-        String stacktraceParam = webRequest.getParameter("stacktrace");
-        return stacktrace && StringUtils.isNotBlank(stacktraceParam) && stacktraceParam.equals("true");
+    private boolean isTraceParameterEnabled(WebRequest webRequest) {
+        String[] traceValues = webRequest.getParameterValues("trace");
+        return Objects.nonNull(traceValues) && traceValues.length > 0 && Arrays.asList(traceValues).contains("true");
     }
 }

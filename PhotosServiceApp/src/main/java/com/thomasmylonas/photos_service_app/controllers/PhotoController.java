@@ -31,7 +31,7 @@ public class PhotoController {
     public ResponseEntity<ResponseSuccess> findAllPhotosByRestTemplate() {
         final String message = "Success: The photos are found (by RestTemplate)!";
         List<PhotoResponseDto> photoResponseDtos = photoService.findAllPhotosByRestTemplate();
-        return responseBuilder.buildResponseSuccess(HttpStatus.OK.value(), message, Map.of("photos_response", photoResponseDtos));
+        return responseBuilder.buildResponseSuccess(HttpStatus.OK, message, Map.of("photos_response", photoResponseDtos));
     }
 
     /**
@@ -43,6 +43,6 @@ public class PhotoController {
     public ResponseEntity<ResponseSuccess> findAllPhotosByWebClient() {
         final String message = "Success: The photos are found (by WebClient)!";
         List<PhotoResponseDto> photoResponseDtos = photoService.findAllPhotosByWebClient();
-        return responseBuilder.buildResponseSuccess(HttpStatus.OK.value(), message, Map.of("photos_response", photoResponseDtos));
+        return responseBuilder.buildResponseSuccess(HttpStatus.OK, message, Map.of("photos_response", photoResponseDtos));
     }
 }

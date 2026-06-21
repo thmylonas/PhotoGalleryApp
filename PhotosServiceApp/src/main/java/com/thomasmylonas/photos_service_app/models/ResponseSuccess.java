@@ -8,24 +8,23 @@ import lombok.Builder;
 import java.time.LocalDateTime;
 import java.util.Map;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public record ResponseSuccess(
-
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
         @JsonProperty(value = "timestamp")
         LocalDateTime timestamp,
 
         @JsonProperty(value = "status_code")
-        int statusCode,
+        String statusCode,
 
         @JsonProperty(value = "message")
         String message,
 
         @JsonProperty(value = "path")
-        String path,
+        String path, // "request URL"
 
         @JsonProperty(value = "data")
-        Map<String, ?> data
+        Map<String, ?> data // The resource to be returned
 ) {
 }
