@@ -37,3 +37,19 @@ Add in the @Configuration class the next bean:
     }
 
 ========================================================================================================================
+
+Link:
+- https://github.com/netty/netty/issues/14942
+- https://github.com/apache/grails-core/issues/15343
+- https://issues.apache.org/jira/browse/SPARK-53851
+- https://www.reddit.com/r/java/comments/1l8veyk/is_there_any_way_to_disable_the_sunmiscunsafe
+- https://netty.io/wiki/java-24-and-sun.misc.unsafe.html
+- https://github.com/quarkusio/quarkus/issues/49905
+- https://ask.datomic.com/index.php/1882/datomic-warning-terminally-deprecated-method-unsafe-called
+
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (file:/C:/Users/Thomas_Mylonas/.m2/repository/io/netty/netty-common/4.1.127.Final/netty-common-4.1.127.Final.jar)
+WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
+WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
+
+========================================================================================================================
