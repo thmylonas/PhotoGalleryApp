@@ -23,7 +23,7 @@ public class PhotoController {
     private final ResponseBuilder responseBuilder;
 
     /**
-     * http://localhost:8080/api/v1/photos/rest-template
+     * "GET, http://localhost:8080/api/v1/photos/rest-template"
      *
      * @return The ResponseEntity<ResponseSuccess>
      */
@@ -35,7 +35,7 @@ public class PhotoController {
     }
 
     /**
-     * http://localhost:8080/api/v1/photos/web-client
+     * "GET, http://localhost:8080/api/v1/photos/web-client"
      *
      * @return The ResponseEntity<ResponseSuccess>
      */
