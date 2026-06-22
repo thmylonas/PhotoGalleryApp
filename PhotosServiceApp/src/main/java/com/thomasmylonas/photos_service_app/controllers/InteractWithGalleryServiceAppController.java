@@ -29,9 +29,9 @@ public class InteractWithGalleryServiceAppController {
      * @return The ResponseEntity<ResponseSuccess>
      */
     @PostMapping
-    public ResponseEntity<ResponseSuccess> sendPhotosToGalleryServiceApp() {
+    public ResponseEntity<ResponseSuccess> saveAllPhotosAndSendPhotosToGalleryServiceApp() {
         final String message = "Success: The photos are send to 'GalleryServiceApp'!";
-        List<PhotoResponseDto> photoResponseDtos = photoService.sendPhotosToGalleryServiceApp();
+        List<PhotoResponseDto> photoResponseDtos = photoService.saveAllPhotosAndSendPhotosToGalleryServiceApp();
         return responseBuilder.buildResponseSuccess(HttpStatus.OK, message, Map.of("photos_response", photoResponseDtos));
     }
 }

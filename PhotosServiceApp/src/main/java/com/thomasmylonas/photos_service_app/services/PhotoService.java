@@ -10,5 +10,5 @@ public interface PhotoService {
 
     List<PhotoResponseDto> findAllPhotosByWebClientAndSaveAllPhotos();
 
-    List<PhotoResponseDto> sendPhotosToGalleryServiceApp();
+    List<PhotoResponseDto> saveAllPhotosAndSendPhotosToGalleryServiceApp();
 }

@@ -66,12 +66,12 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
     @Override
-    public List<PhotoResponseDto> sendPhotosToGalleryServiceApp() {
+    public List<PhotoResponseDto> saveAllPhotosAndSendPhotosToGalleryServiceApp() {
 
         List<PhotoResponseDto> photoResponseDtos = findAllPhotosByWebClientAndSaveAllPhotos();
 
         webClient.post()
-                .uri(galleryServiceAppUrl)
+                .uri(galleryServiceAppUrl + "/api/v1/photos/all")
                 .bodyValue(photoResponseDtos)
                 .retrieve()
                 .bodyToMono(String.class)
