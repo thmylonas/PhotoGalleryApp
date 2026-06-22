@@ -9,4 +9,6 @@ public interface PhotoService {
     List<PhotoResponseDto> findAllPhotosByRestTemplate();
 
     List<PhotoResponseDto> findAllPhotosByWebClient();
+
+    List<PhotoResponseDto> sendPhotosToGalleryServiceApp();
 }

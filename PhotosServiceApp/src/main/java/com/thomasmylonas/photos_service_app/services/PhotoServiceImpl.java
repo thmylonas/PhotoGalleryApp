@@ -23,6 +23,9 @@ public class PhotoServiceImpl implements PhotoService {
     @Value(value = "${json_placeholder.url}")
     private String jsonPlaceholderUrl;
 
+    @Value(value = "${gallery_service_app.url}")
+    private String galleryServiceAppUrl;
+
     private final PhotoRepository photoRepository;
     private final PhotoMapper photoMapper;
     private final RestTemplate restTemplate;
@@ -60,5 +63,19 @@ public class PhotoServiceImpl implements PhotoService {
         }
         photoRepository.saveAll(photos);
         return photos.stream().map(photoMapper::fromPhoto).toList();
+    }
+
+    @Override
+    public List<PhotoResponseDto> sendPhotosToGalleryServiceApp() {
+
+        List<PhotoResponseDto> photoResponseDtos = findAllPhotosByWebClient();
+
+        webClient.post()
+                .uri(galleryServiceAppUrl)
+                .bodyValue(photoResponseDtos)
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
+        return photoResponseDtos;
     }
 }
