@@ -27,8 +27,8 @@ public class PhotoServiceAppApplication {
     //@Bean
     protected CommandLineRunner commandLineRunner() {
         return args -> {
-            //List<PhotoResponseDto> photoResponseDtos = photoService.findAllPhotosByRestTemplate();
-            List<PhotoResponseDto> photoResponseDtos = photoService.findAllPhotosByWebClient();
+            //List<PhotoResponseDto> photoResponseDtos = photoService.findAllPhotosByRestTemplateAndSaveAllPhotos();
+            List<PhotoResponseDto> photoResponseDtos = photoService.findAllPhotosByWebClientAndSaveAllPhotos();
             photoResponseDtos.forEach(photoResponseDto -> log.info(photoResponseDto.toString()));
         };
     }

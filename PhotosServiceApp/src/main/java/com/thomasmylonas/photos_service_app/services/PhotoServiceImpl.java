@@ -32,7 +32,7 @@ public class PhotoServiceImpl implements PhotoService {
     private final WebClient webClient;
 
     @Override
-    public List<PhotoResponseDto> findAllPhotosByRestTemplate() {
+    public List<PhotoResponseDto> findAllPhotosByRestTemplateAndSaveAllPhotos() {
 
         ResponseEntity<List<Photo>> photosResponseEntity = restTemplate.exchange(
                 jsonPlaceholderUrl + "/photos",
@@ -48,7 +48,7 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
     @Override
-    public List<PhotoResponseDto> findAllPhotosByWebClient() {
+    public List<PhotoResponseDto> findAllPhotosByWebClientAndSaveAllPhotos() {
 
         List<Photo> photos = webClient
                 .get()
@@ -68,7 +68,7 @@ public class PhotoServiceImpl implements PhotoService {
     @Override
     public List<PhotoResponseDto> sendPhotosToGalleryServiceApp() {
 
-        List<PhotoResponseDto> photoResponseDtos = findAllPhotosByWebClient();
+        List<PhotoResponseDto> photoResponseDtos = findAllPhotosByWebClientAndSaveAllPhotos();
 
         webClient.post()
                 .uri(galleryServiceAppUrl)

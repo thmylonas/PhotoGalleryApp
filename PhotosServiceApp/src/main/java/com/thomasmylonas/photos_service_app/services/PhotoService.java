@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface PhotoService {
 
-    List<PhotoResponseDto> findAllPhotosByRestTemplate();
+    List<PhotoResponseDto> findAllPhotosByRestTemplateAndSaveAllPhotos();
 
-    List<PhotoResponseDto> findAllPhotosByWebClient();
+    List<PhotoResponseDto> findAllPhotosByWebClientAndSaveAllPhotos();
 
     List<PhotoResponseDto> sendPhotosToGalleryServiceApp();
 }
