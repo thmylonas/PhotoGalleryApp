@@ -53,3 +53,7 @@ WARNING: Please consider reporting this to the maintainers of class io.netty.uti
 WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
 
 ========================================================================================================================
+
+H2 database - Maximum rows stored are 1_000
+
+========================================================================================================================
