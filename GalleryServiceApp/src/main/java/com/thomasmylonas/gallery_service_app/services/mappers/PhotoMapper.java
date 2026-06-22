@@ -11,7 +11,7 @@ public class PhotoMapper {
     public Photo toPhoto(PhotoRequestDto photoRequestDto) {
         return Photo.builder()
                 .albumId(photoRequestDto.albumId())
-                .title(photoRequestDto.url())
+                .title(photoRequestDto.title())
                 .url(photoRequestDto.url())
                 .thumbnailUrl(photoRequestDto.thumbnailUrl())
                 .build();

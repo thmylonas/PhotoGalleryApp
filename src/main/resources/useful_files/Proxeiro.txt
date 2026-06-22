@@ -54,6 +54,7 @@ WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
 
 ========================================================================================================================
 
-H2 database - Maximum rows stored are 1_000
+H2 database - Console:
+Set the field: "Max rows:" with 10_000
 
 ========================================================================================================================
