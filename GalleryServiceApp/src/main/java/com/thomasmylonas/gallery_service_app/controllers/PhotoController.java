@@ -31,7 +31,8 @@ public class PhotoController {
     private final ResponseBuilder responseBuilder;
 
     /**
-     * "GET, http://localhost:8080/api/v1/photos/{id}"
+     * Endpoint:
+     * - GET, "http://localhost:8080/api/v1/photos/{id}"
      *
      * @param photoId The "photoId"
      * @return The ResponseEntity<ResponseSuccess>
@@ -45,7 +46,8 @@ public class PhotoController {
     }
 
     /**
-     * "GET, http://localhost:8080/api/v1/photos"
+     * Endpoint:
+     * - GET, "http://localhost:8080/api/v1/photos"
      *
      * @return The ResponseEntity<ResponseSuccess>
      */
@@ -58,7 +60,8 @@ public class PhotoController {
     }
 
     /**
-     * "POST, http://localhost:8080/api/v1/photos"
+     * Endpoint:
+     * - POST, "http://localhost:8080/api/v1/photos"
      *
      * @param photoRequestDto The "photoRequestDto"
      * @return The ResponseEntity<ResponseSuccess>
@@ -79,7 +82,8 @@ public class PhotoController {
     }
 
     /**
-     * "POST, http://localhost:8080/api/v1/photos/all"
+     * Endpoint:
+     * - POST, "http://localhost:8080/api/v1/photos/all"
      *
      * @param photoRequestDtos The "photoRequestDtos"
      * @return The ResponseEntity<ResponseSuccess>
@@ -93,7 +97,8 @@ public class PhotoController {
     }
 
     /**
-     * "PUT, http://localhost:8080/api/v1/photos/{id}"
+     * Endpoint:
+     * - PUT, "http://localhost:8080/api/v1/photos/{id}"
      *
      * @param photoRequestDto The "photoRequestDto"
      * @param photoId         The "photoId"
@@ -108,7 +113,8 @@ public class PhotoController {
     }
 
     /**
-     * "DELETE, http://localhost:8080/api/v1/photos/{id}"
+     * Endpoint:
+     * - DELETE, "http://localhost:8080/api/v1/photos/{id}"
      *
      * @param photoId The "photoId"
      * @return The ResponseEntity<ResponseSuccess>
