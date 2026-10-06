@@ -1,3 +1,7 @@
-### PhotoGalleryApp
+# PhotoGalleryApp *<<Under_Construction>>*
 
-Under construction
+GitHub link:
+
+* [PhotoGalleryApp](https://github.com/thmylonas/PhotoGalleryApp.git)
+
+*<<Under_Construction>>*
