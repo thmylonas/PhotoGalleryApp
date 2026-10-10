@@ -27,6 +27,8 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class PhotoController {
 
+    private static final String REQUEST_MAPPING = "/api/v1/photos";
+
     private final PhotoService photoService;
     private final ResponseBuilder responseBuilder;
 
@@ -40,7 +42,7 @@ public class PhotoController {
     @GetMapping(path = {"/{id}"})
     @ResponseStatus(value = HttpStatus.OK)
     public ResponseEntity<ResponseSuccess> findPhotoById(@PathVariable(value = "id") Long photoId) {
-        final String message = "Success: The photo with ID " + photoId + " is found!";
+        final String message = "Success: The Photo with ID " + photoId + " is found!";
         PhotoResponseDto photoResponseDto = photoService.findPhotoById(photoId);
         return responseBuilder.buildResponseSuccess(HttpStatus.OK, message, Map.of("photo_response", photoResponseDto));
     }
@@ -54,7 +56,7 @@ public class PhotoController {
     @GetMapping
     @ResponseStatus(value = HttpStatus.OK)
     public ResponseEntity<ResponseSuccess> findAllPhotos() {
-        final String message = "Success: The photos are found!";
+        final String message = "Success: The Photos are found!";
         List<PhotoResponseDto> photoResponseDtos = photoService.findAllPhotos();
         return responseBuilder.buildResponseSuccess(HttpStatus.OK, message, Map.of("photos_response", photoResponseDtos));
     }
@@ -70,15 +72,14 @@ public class PhotoController {
     @ResponseStatus(value = HttpStatus.CREATED)
     public ResponseEntity<ResponseSuccess> savePhoto(@RequestBody PhotoRequestDto photoRequestDto) {
 
-        final String message = "Created: The photo has been created!";
-        PhotoResponseDto photoResponseDto = photoService.savePhoto(photoRequestDto);
-
-        String photoUri = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/" + photoResponseDto.id())
-                .buildAndExpand(photoResponseDto.id())
+        final String message = "Created: The Photo has been created successfully!";
+        PhotoResponseDto savedPhotoResponseDto = photoService.savePhoto(photoRequestDto);
+        String savedPhotoUri = ServletUriComponentsBuilder
+                .fromCurrentContextPath() // "http://localhost:8081"
+                .path(REQUEST_MAPPING + "/{id}")
+                .buildAndExpand(savedPhotoResponseDto.id())
                 .toUriString();
-        return responseBuilder.buildResponseSuccess(HttpStatus.CREATED, message, photoUri, Map.of("saved_photo_response", photoResponseDto));
+        return responseBuilder.buildResponseSuccess(HttpStatus.CREATED, message, savedPhotoUri, Map.of("saved_photo_response", savedPhotoResponseDto));
     }
 
     /**
@@ -91,9 +92,9 @@ public class PhotoController {
     @PostMapping(path = {"/all"})
     @ResponseStatus(value = HttpStatus.CREATED)
     public ResponseEntity<ResponseSuccess> saveAllPhotos(@RequestBody List<PhotoRequestDto> photoRequestDtos) {
-        final String message = "Created: The photos have been created!";
-        List<PhotoResponseDto> photoResponseDtos = photoService.saveAllPhotos(photoRequestDtos);
-        return responseBuilder.buildResponseSuccess(HttpStatus.CREATED, message, Map.of("saved_photos_response", photoResponseDtos));
+        final String message = "Created: The Photos have been created successfully!";
+        List<PhotoResponseDto> savedPhotoResponseDtos = photoService.saveAllPhotos(photoRequestDtos);
+        return responseBuilder.buildResponseSuccess(HttpStatus.CREATED, message, Map.of("saved_photos_response", savedPhotoResponseDtos));
     }
 
     /**
@@ -107,9 +108,9 @@ public class PhotoController {
     @PutMapping(path = {"/{id}"})
     @ResponseStatus(value = HttpStatus.OK)
     public ResponseEntity<ResponseSuccess> updatePhoto(@RequestBody PhotoRequestDto photoRequestDto, @PathVariable(value = "id") Long photoId) {
-        final String message = "Success: The photo with ID " + photoId + " is found!";
-        PhotoResponseDto photoResponseDto = photoService.updatePhoto(photoRequestDto, photoId);
-        return responseBuilder.buildResponseSuccess(HttpStatus.OK, message, Map.of("updated_photo_response", photoResponseDto));
+        final String message = "Success: The Photo with ID " + photoId + " has been updated successfully!";
+        PhotoResponseDto updatedPhotoResponseDto = photoService.updatePhoto(photoRequestDto, photoId);
+        return responseBuilder.buildResponseSuccess(HttpStatus.OK, message, Map.of("updated_photo_response", updatedPhotoResponseDto));
     }
 
     /**
@@ -122,7 +123,7 @@ public class PhotoController {
     @DeleteMapping(path = {"/{id}"})
     @ResponseStatus(value = HttpStatus.OK)
     public ResponseEntity<ResponseSuccess> deletePhotoById(@PathVariable(value = "id") Long photoId) {
-        final String message = "Success: The photo with ID " + photoId + " is found!";
+        final String message = "Success: The Photo with ID " + photoId + " has been deleted successfully!";
         photoService.deletePhotoById(photoId);
         return responseBuilder.buildResponseSuccess(HttpStatus.OK, message, Map.of("message", message));
     }
