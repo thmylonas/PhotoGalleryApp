@@ -1,6 +1,6 @@
 package com.thomasmylonas.photos_service_app.controllers;
 
-import com.thomasmylonas.photos_service_app.dtos.photos_dtos.PhotoResponseDto;
+import com.thomasmylonas.photos_service_app.dtos.photo_dtos.PhotoResponseDto;
 import com.thomasmylonas.photos_service_app.models.ResponseBuilder;
 import com.thomasmylonas.photos_service_app.models.ResponseSuccess;
 import com.thomasmylonas.photos_service_app.services.PhotoService;

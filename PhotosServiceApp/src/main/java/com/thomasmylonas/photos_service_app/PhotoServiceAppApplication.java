@@ -1,6 +1,6 @@
 package com.thomasmylonas.photos_service_app;
 
-import com.thomasmylonas.photos_service_app.dtos.photos_dtos.PhotoResponseDto;
+import com.thomasmylonas.photos_service_app.dtos.photo_dtos.PhotoResponseDto;
 import com.thomasmylonas.photos_service_app.services.PhotoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
