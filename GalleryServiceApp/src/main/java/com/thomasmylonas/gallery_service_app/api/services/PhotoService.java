@@ -1,7 +1,7 @@
-package com.thomasmylonas.gallery_service_app.services;
+package com.thomasmylonas.gallery_service_app.api.services;
 
-import com.thomasmylonas.gallery_service_app.dtos.photo_dtos.PhotoRequestDto;
-import com.thomasmylonas.gallery_service_app.dtos.photo_dtos.PhotoResponseDto;
+import com.thomasmylonas.gallery_service_app.api.dtos.photo_dtos.PhotoRequestDto;
+import com.thomasmylonas.gallery_service_app.api.dtos.photo_dtos.PhotoResponseDto;
 
 import java.util.List;
 

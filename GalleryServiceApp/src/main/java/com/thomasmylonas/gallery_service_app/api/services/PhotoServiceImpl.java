@@ -1,11 +1,11 @@
-package com.thomasmylonas.gallery_service_app.services;
+package com.thomasmylonas.gallery_service_app.api.services;
 
-import com.thomasmylonas.gallery_service_app.dtos.photo_dtos.PhotoRequestDto;
-import com.thomasmylonas.gallery_service_app.dtos.photo_dtos.PhotoResponseDto;
-import com.thomasmylonas.gallery_service_app.entities.Photo;
-import com.thomasmylonas.gallery_service_app.exceptions.RequestedResourceNotFoundException;
-import com.thomasmylonas.gallery_service_app.repositories.PhotoRepository;
-import com.thomasmylonas.gallery_service_app.services.mappers.PhotoMapper;
+import com.thomasmylonas.gallery_service_app.api.dtos.photo_dtos.PhotoRequestDto;
+import com.thomasmylonas.gallery_service_app.api.dtos.photo_dtos.PhotoResponseDto;
+import com.thomasmylonas.gallery_service_app.api.entities.Photo;
+import com.thomasmylonas.gallery_service_app.api.exceptions.RequestedResourceNotFoundException;
+import com.thomasmylonas.gallery_service_app.api.repositories.PhotoRepository;
+import com.thomasmylonas.gallery_service_app.api.services.mappers.PhotoMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;

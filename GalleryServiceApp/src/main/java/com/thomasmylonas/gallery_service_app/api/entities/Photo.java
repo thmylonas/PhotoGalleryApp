@@ -1,4 +1,4 @@
-package com.thomasmylonas.gallery_service_app.entities;
+package com.thomasmylonas.gallery_service_app.api.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

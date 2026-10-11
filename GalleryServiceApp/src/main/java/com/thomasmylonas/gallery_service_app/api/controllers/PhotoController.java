@@ -1,10 +1,10 @@
-package com.thomasmylonas.gallery_service_app.controllers;
+package com.thomasmylonas.gallery_service_app.api.controllers;
 
-import com.thomasmylonas.gallery_service_app.dtos.photo_dtos.PhotoRequestDto;
-import com.thomasmylonas.gallery_service_app.dtos.photo_dtos.PhotoResponseDto;
-import com.thomasmylonas.gallery_service_app.models.ResponseBuilder;
-import com.thomasmylonas.gallery_service_app.models.ResponseSuccess;
-import com.thomasmylonas.gallery_service_app.services.PhotoService;
+import com.thomasmylonas.gallery_service_app.api.dtos.photo_dtos.PhotoRequestDto;
+import com.thomasmylonas.gallery_service_app.api.dtos.photo_dtos.PhotoResponseDto;
+import com.thomasmylonas.gallery_service_app.api.models.ResponseBuilder;
+import com.thomasmylonas.gallery_service_app.api.models.ResponseSuccess;
+import com.thomasmylonas.gallery_service_app.api.services.PhotoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

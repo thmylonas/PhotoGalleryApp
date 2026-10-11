@@ -1,4 +1,4 @@
-package com.thomasmylonas.gallery_service_app.exceptions;
+package com.thomasmylonas.gallery_service_app.api.exceptions;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

@@ -1,4 +1,4 @@
-package com.thomasmylonas.gallery_service_app.models;
+package com.thomasmylonas.gallery_service_app.api.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
