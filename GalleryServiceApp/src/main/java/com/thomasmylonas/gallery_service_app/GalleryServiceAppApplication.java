@@ -1,7 +1,7 @@
 package com.thomasmylonas.gallery_service_app;
 
 import com.thomasmylonas.gallery_service_app.helpers.TestDataProvider;
-import com.thomasmylonas.gallery_service_app.services.PhotoService;
+import com.thomasmylonas.gallery_service_app.api.services.PhotoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
