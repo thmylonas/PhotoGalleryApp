@@ -1,10 +1,13 @@
-package com.thomasmylonas.gallery_service_app.dtos.photos_dtos;
+package com.thomasmylonas.gallery_service_app.dtos.photo_dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 
 @Builder
-public record PhotoRequestDto(
+public record PhotoResponseDto(
+        @JsonProperty(value = "id")
+        Long id,
+
         @JsonProperty(value = "album_id")
         Long albumId,
 

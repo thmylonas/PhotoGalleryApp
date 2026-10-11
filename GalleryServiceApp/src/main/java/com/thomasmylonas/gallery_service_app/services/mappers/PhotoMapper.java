@@ -1,7 +1,7 @@
 package com.thomasmylonas.gallery_service_app.services.mappers;
 
-import com.thomasmylonas.gallery_service_app.dtos.photos_dtos.PhotoRequestDto;
-import com.thomasmylonas.gallery_service_app.dtos.photos_dtos.PhotoResponseDto;
+import com.thomasmylonas.gallery_service_app.dtos.photo_dtos.PhotoRequestDto;
+import com.thomasmylonas.gallery_service_app.dtos.photo_dtos.PhotoResponseDto;
 import com.thomasmylonas.gallery_service_app.entities.Photo;
 import org.springframework.stereotype.Service;
 
