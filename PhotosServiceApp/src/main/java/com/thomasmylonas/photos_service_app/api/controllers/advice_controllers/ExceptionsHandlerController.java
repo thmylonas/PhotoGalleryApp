@@ -1,8 +1,8 @@
-package com.thomasmylonas.photos_service_app.controllers.advice_controllers;
+package com.thomasmylonas.photos_service_app.api.controllers.advice_controllers;
 
-import com.thomasmylonas.photos_service_app.exceptions.RequestedResourceNotFoundException;
-import com.thomasmylonas.photos_service_app.models.ResponseBuilder;
-import com.thomasmylonas.photos_service_app.models.ResponseError;
+import com.thomasmylonas.photos_service_app.api.exceptions.RequestedResourceNotFoundException;
+import com.thomasmylonas.photos_service_app.api.models.ResponseBuilder;
+import com.thomasmylonas.photos_service_app.api.models.ResponseError;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

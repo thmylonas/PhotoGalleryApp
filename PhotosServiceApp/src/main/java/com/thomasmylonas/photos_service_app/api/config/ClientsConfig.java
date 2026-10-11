@@ -1,4 +1,4 @@
-package com.thomasmylonas.photos_service_app.config;
+package com.thomasmylonas.photos_service_app.api.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.thomasmylonas.photos_service_app.models;
+package com.thomasmylonas.photos_service_app.api.models;
 
 import com.thomasmylonas.photos_service_app.helpers.HelperClass;
 import org.springframework.beans.factory.annotation.Value;
