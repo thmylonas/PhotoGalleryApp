@@ -1,13 +1,16 @@
 package com.thomasmylonas.gallery_service_app.api.exceptions;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+@ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class RequestedResourceNotFoundException extends RuntimeException {
 
-    public RequestedResourceNotFoundException(Long resourceId, String clazz) {
-        super(String.format("%s: The %s with ID %d not found!",
-                DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss").format(LocalDateTime.now()),
-                clazz, resourceId));
+    public RequestedResourceNotFoundException(String clazz, Long resourceId) {
+        super(String.format("%s: The %s with ID %d is not found!",
+                LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy")), clazz, resourceId));
     }
 }

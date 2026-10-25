@@ -23,7 +23,7 @@ public class PhotoServiceImpl implements PhotoService {
     @Override
     public PhotoResponseDto findPhotoById(Long id) {
         Photo photo = photoRepository.findById(id)
-                .orElseThrow(() -> new RequestedResourceNotFoundException(id, Photo.class.getSimpleName()));
+                .orElseThrow(() -> new RequestedResourceNotFoundException(Photo.class.getSimpleName(), id));
         return photoMapper.fromPhoto(photo);
     }
 
@@ -48,7 +48,7 @@ public class PhotoServiceImpl implements PhotoService {
     public PhotoResponseDto updatePhoto(PhotoRequestDto photoRequestDto, Long id) {
 
         Photo photoToUpdate = photoRepository.findById(id)
-                .orElseThrow(() -> new RequestedResourceNotFoundException(id, Photo.class.getSimpleName()));
+                .orElseThrow(() -> new RequestedResourceNotFoundException(Photo.class.getSimpleName(), id));
 
         if (Objects.nonNull(photoRequestDto.albumId())) {
             photoToUpdate.setAlbumId(photoRequestDto.albumId());
