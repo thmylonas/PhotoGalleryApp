@@ -29,13 +29,14 @@ public class PhotoServiceImpl implements PhotoService {
 
     @Override
     public List<PhotoResponseDto> findAllPhotos() {
-        return photoRepository.findAll().stream().map(photoMapper::fromPhoto).toList();
+        List<Photo> photos = photoRepository.findAll();
+        return photos.stream().map(photoMapper::fromPhoto).toList();
     }
 
     @Override
     public PhotoResponseDto savePhoto(PhotoRequestDto photoRequestDto) {
-        Photo photoToSave = photoMapper.toPhoto(photoRequestDto);
-        Photo savedPhoto = photoRepository.save(photoToSave);
+        Photo photo = photoMapper.toPhoto(photoRequestDto);
+        Photo savedPhoto = photoRepository.save(photo);
         return photoMapper.fromPhoto(savedPhoto);
     }
 
@@ -49,18 +50,19 @@ public class PhotoServiceImpl implements PhotoService {
 
         Photo photoToUpdate = photoRepository.findById(id)
                 .orElseThrow(() -> new RequestedResourceNotFoundException(Photo.class.getSimpleName(), id));
+        Photo photo = photoMapper.toPhoto(photoRequestDto);
 
-        if (Objects.nonNull(photoRequestDto.albumId())) {
-            photoToUpdate.setAlbumId(photoRequestDto.albumId());
+        if (Objects.nonNull(photo.getAlbumId())) {
+            photoToUpdate.setAlbumId(photo.getAlbumId());
         }
-        if (StringUtils.hasLength(photoRequestDto.title())) {
-            photoToUpdate.setTitle(photoRequestDto.title());
+        if (StringUtils.hasLength(photo.getTitle())) {
+            photoToUpdate.setTitle(photo.getTitle());
         }
-        if (StringUtils.hasLength(photoRequestDto.url())) {
-            photoToUpdate.setUrl(photoRequestDto.url());
+        if (StringUtils.hasLength(photo.getUrl())) {
+            photoToUpdate.setUrl(photo.getUrl());
         }
-        if (StringUtils.hasLength(photoRequestDto.thumbnailUrl())) {
-            photoToUpdate.setThumbnailUrl(photoRequestDto.thumbnailUrl());
+        if (StringUtils.hasLength(photo.getThumbnailUrl())) {
+            photoToUpdate.setThumbnailUrl(photo.getThumbnailUrl());
         }
         Photo updatedPhoto = photoRepository.save(photoToUpdate);
         return photoMapper.fromPhoto(updatedPhoto);
